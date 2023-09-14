@@ -13,14 +13,14 @@ import lombok.NoArgsConstructor;
 public class Drive {
 	private String userid;
 	private MultipartFile path;
-	private String driveFilePath;
+	private String realFilePath;
 	private String filename;
 	
 	@Builder
-	public Drive(String userid, MultipartFile path, String driveFile_path, String filename) {
+	public Drive(String userid, MultipartFile path, String realFilePath, String filename) {
 		this.userid = userid;
 		this.path = path;
-		this.driveFilePath = driveFile_path;
+		this.realFilePath = realFilePath;
 		this.filename = filename;
 	}
 	
@@ -32,7 +32,7 @@ public class Drive {
 		}
 		this.userid =  request.getParameter(userid);
 		this.path = null;
-		this.driveFilePath = "/";
+		this.realFilePath = "/";
 		this.filename = request.getParameter(filename);
 	}
 }

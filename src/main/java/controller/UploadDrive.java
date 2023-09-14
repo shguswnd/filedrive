@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
+import controller.dto.driveFileDto;
 import service.file.FileService;
 
 @Controller
@@ -19,6 +20,11 @@ public class UploadDrive {
 	
 	@PostMapping("/drive")
 	public String uploadFiles(HttpServletRequest request, MultipartFile file) {
+		
+		driveFileDto dto = new driveFileDto(request, file);
+		
+		System.out.println("test");
+		fileService.saveDriveFiles(dto, request);
 		
 		
 		

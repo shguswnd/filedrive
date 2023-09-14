@@ -12,7 +12,7 @@
 	</head>
 	<body>
 		<ul>
-		<form id="store" style="display: none;" action="${pageContext.request.contextPath}/drive" method="post" enctype="multipart/form-data">
+		<form id="store"  action="${pageContext.request.contextPath}/drive" method="post" enctype="multipart/form-data">
 			<div style="margin-top: 15px;">
 			  <label for="formFileLg" class="form-label">파일업로드</label>
 			  <input class="form-control form-control-lg" name="file" id="formFileLg" type="file">
