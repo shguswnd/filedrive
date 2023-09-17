@@ -23,7 +23,17 @@ public class UploadDrive {
 		
 		driveFileDto dto = new driveFileDto(request, file);
 		
-		System.out.println("test");
+		//세션값 아직 안남들어 id는 직접 다시 넣는다
+		dto.setUserid();
+		
+		//파일명
+		dto.fileName(dto.getFile().getOriginalFilename());
+		//real경로 삽입
+		dto.findFileRealPath(request);
+		//파일 경로
+		dto.filePath(dto.getRealFilePath() + dto.getUserid());
+		
+		
 		fileService.saveDriveFiles(dto, request);
 		
 		
